@@ -142,4 +142,53 @@ docker-compose up
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/postgresql-pg4.png?raw=true">
 
 # Dockerizing Mongo Express and MongoDB
+**Step 1: Create a docker-compose.yaml file.**
+```
+version: "3.9"
+services:
+  #mongo This is the actual database server that stores and manages the data.
+  mongo:
+    image: mongo:latest
+    container_name: mongo_db_old
+    environment:
+      - MONGO_INITDB_DATABASE=testdb
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    networks:
+      - mongo-network
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./my-data/db:/data/db
+      - ./database/archive:/database/archive
+
+  #mongo-express This is a web-based administrative user interface for MongoDB
+  mongo-express:
+    image: mongo-express
+    container_name: mexpress_old
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=shamura
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=shamura
+      - ME_CONFIG_MONGODB_URL=mongodb://root:root@mongo:27017/?authSource=admin
+      - ME_CONFIG_BASICAUTH_USERNAME=anim
+      - ME_CONFIG_BASICAUTH_PASSWORD=anim
+    networks:
+      - mongo-network
+    links:
+      - mongo
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+
+networks:
+  mongo-network:
+    driver: bridge
+
+```
+**Step 2: Turn up the docker-compose file .**
+```
+docker-compose up
+```
+**Step 3: Hit http://localhost:8081/ for accesing Mongo Express dashboard.** <br/> <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/mongo-express.png?raw=true">
