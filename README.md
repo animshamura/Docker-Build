@@ -4,6 +4,7 @@
 **Step 3: Create a Dockerfile.** <br/><br/>
 **Step 4: Build an image.** <br/><br/>
 **Step 5: Run the imaage in the container.** <br/><br/>
+**Step 6: Hit http://localhost:9090/ and http://localhost:9090/greet; and get following view in the browser.**
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-running.png?raw=true">
 <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring--greeting.png?raw=true">
