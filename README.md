@@ -5,10 +5,12 @@
 **Step 4: Build an image.** <br/><br/>
 **Step 5: Run the imaage in the container.** <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-running.png?raw=true">
+<br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring--greeting.png?raw=true">
 
 # Dockerized Flask App
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-running.png?raw=true">
+<br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-greeting.png?raw=true">
 
 # Dockerized Angular App
