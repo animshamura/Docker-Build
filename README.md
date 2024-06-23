@@ -25,7 +25,7 @@ ENTRYPOINT ["java","-jar","/home/app/target/spring-boot-docker.jar"]
 ```
 docker build -t spring-app .
 ```
-**Step 5: Run the imaage in the container.** 
+**Step 5: Run the image in the container.** 
 ```
 docker run -d -p 9090:8080 spring-app
 ```
