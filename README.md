@@ -3,6 +3,10 @@
 **Step 2: Edit pom.xml file and add finalname of the artifact.** <br/><br/>
 **Step 3: Create a Dockerfile.** <br/><br/>
 **Step 4: Build an image.** <br/><br/>
+...
+
+docker build -t spring-app .
+...
 **Step 5: Run the imaage in the container.** <br/><br/>
 **Step 6: Hit http://localhost:9090/ and http://localhost:9090/greet for the following views in the browser.** <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-running.png?raw=true">
