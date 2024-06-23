@@ -88,7 +88,7 @@ docker build -t node-app .
 ```
 **Step 4: Run the imaage in the container.** 
 ```
-docker run -d -p 3000:3000 flask-app
+docker run -d -p 3000:3000 node-app
 ```
 **Step 5: Hit http://localhost:3000/ for the following view in the browser.** <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/node-app.png?raw=true">
