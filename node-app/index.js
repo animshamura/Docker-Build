@@ -8,7 +8,7 @@ const app = express();
 
 // Define a route handler for the root URL
 app.get('/', (req, res) => {
-    res.send('Nodeapp is running...');
+    res.send('<h1><center>Nodeapp is running...</center></h1>');
 });
 
 // Start the server on port 3000
