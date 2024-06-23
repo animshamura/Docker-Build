@@ -55,7 +55,7 @@ CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
 ```
 docker build -t flask-app .
 ```
-**Step 5: Run the imaage in the container.** 
+**Step 5: Run the image in the container.** 
 ```
 docker run -d -p 5000:5000 flask-app
 ```
@@ -86,7 +86,7 @@ CMD ["npm", "start"]
 ```
 docker build -t node-app .
 ```
-**Step 4: Run the imaage in the container.** 
+**Step 4: Run the image in the container.** 
 ```
 docker run -d -p 3000:3000 node-app
 ```
@@ -115,7 +115,7 @@ CMD ["ng", "serve"]
 ```
 docker build -t angular-app .
 ```
-**Step 5: Run the imaage in the container.** 
+**Step 5: Run the image in the container.** 
 ```
 docker run -d -p 4200:4200 angular-app
 ```
