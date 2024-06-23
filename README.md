@@ -1,4 +1,5 @@
-# Dockerizing a Spring Boot App
+![image](https://github.com/animshamura/Dockerization/assets/47661479/e705c0ea-a6b7-4f0e-8a58-57af010dbad3)
+# Dockerizing Spring Boot App
 **Step 1: Create a spring boot app.** <br/><br/>
 **Step 2: Edit pom.xml file and add finalname of the artifact.** 
 ```
@@ -38,7 +39,7 @@ docker run -d -p 9090:8080 spring-app
 
 **Step 1: Create a flask app.** <br/><br/>
 **Step 2: Create a file naming requirements.txt for installing all dependencies.** <br/><br/>
-**Step 2: Create a Dockerfile.**
+**Step 3: Create a Dockerfile.**
 ```
 FROM python:3.8-slim-buster
 
@@ -63,8 +64,37 @@ docker run -d -p 5000:5000 flask-app
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-running.png?raw=true">
 <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-greeting.png?raw=true">
+# Dockerizing Node App
 
-# Dockerizing an Angular App
+**Step 1: Create a node app.** <br/><br/>
+**Step 2: Create a Dockerfile.**
+```
+FROM node:14
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install express
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+```
+**Step 3: Build an image.**
+```
+docker build -t node-app .
+```
+**Step 4: Run the imaage in the container.** 
+```
+docker run -d -p 3000:3000 flask-app
+```
+**Step 5: Hit http://localhost:3000/ for the following view in the browser.** <br/><br/>
+<img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/node-app.png?raw=true">
+
+# Dockerizing Angular App
 **Step 1: Create an angular app.** <br/><br/>
 **Step 2: Create a Dockerfile.**
 ```
