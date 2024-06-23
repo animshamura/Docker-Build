@@ -1,9 +1,9 @@
 # Dockerized Spring Boot App
-**Step 1: Create a spring boot app.**
-**Step 2: Edit pom.xml file and add finalname of the artifact.**
-**Step 3: Create a Dockerfile.**
-**Step 4: Build an image.**
-**Step 5: Run the imaage in the container.**
+**Step 1: Create a spring boot app.** <br/>
+**Step 2: Edit pom.xml file and add finalname of the artifact.** <br/>
+**Step 3: Create a Dockerfile.** <br/>
+**Step 4: Build an image.** <br/>
+**Step 5: Run the imaage in the container.** <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-running.png?raw=true">
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring--greeting.png?raw=true">
 
