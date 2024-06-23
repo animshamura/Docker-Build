@@ -68,6 +68,45 @@ docker run -d -p 5000:5000 flask-app
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/angular.png?raw=true">
 
 # Dockerizing  PHPMyAdmin and MySQL
+**Step 1: Create a docker-compose.yaml file.**
+```
+version: '3.9'
+services:
+  mysql_db:
+    image: mysql:8.3
+    container_name: my-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: anim
+      MYSQL_PASSWORD: anim
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./init-db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "3307:3306"
+    # Removed deprecated command
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: my-phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mysql_db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: anim
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql_db
+volumes:
+  mysql-data:
+```
+**Step 2: Turn the docker-compose file up .**
+```
+docker-compose up
+```
+
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/mysql-pma.png?raw=true">
 
 # Dockering PG4Admin and PostgreSQL
