@@ -9,11 +9,11 @@
 # Dockerized Angular App
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/angular.png?raw=true">
 
-# Dockerized MySQL Database
+# Dockerized PHPMyAdmin for MySQL Database
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/mysql-pma.png?raw=true">
 
-# Dockerized PostgreSQL Database
+# Dockerized PG4Admin for PostgreSQL Database
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/postgresql-pg4.png?raw=true">
 
-# Dockerized MongoDB
+# Dockerized Mongo Express for MongoDB
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/mongo-express.png?raw=true">
