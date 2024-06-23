@@ -1,4 +1,3 @@
-![image](https://github.com/animshamura/Dockerization/assets/47661479/e705c0ea-a6b7-4f0e-8a58-57af010dbad3)
 # Dockerizing Spring Boot App
 **Step 1: Create a spring boot app.** <br/><br/>
 **Step 2: Edit pom.xml file and add finalname of the artifact.** 
