@@ -63,7 +63,7 @@ docker build -t flask-app .
 ```
 **Step 5: Run the imaage in the container.** 
 ```
-docker run -d -p 5000:8080 flask-app
+docker run -d -p 5000:5000 flask-app
 ```
 **Step 6: Hit http://localhost:5000/ and http://localhost:5000/greet for the following views in the browser.** <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-running.png?raw=true">
