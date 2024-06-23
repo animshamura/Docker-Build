@@ -164,7 +164,7 @@ services:
 ```
 docker-compose up
 ```
-**Step 3: Hit http://localhost:5050/ for accesing PG4Admin dashboard.** <br/> <br/>
+**Step 3: Hit http://localhost:5050/ for accesing PGAdmin dashboard.** <br/> <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/postgresql-pg4.png?raw=true">
 
 # Dockerizing Mongo Express and MongoDB
