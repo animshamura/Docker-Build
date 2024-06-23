@@ -50,12 +50,6 @@ RUN pip3 install -r requirements.txt
 COPY . .
 
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
-FROM maven:3.8.3-openjdk-17 AS build
-COPY src /home/app/src
-COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean package
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","/home/app/target/spring-boot-docker.jar"]
 ```
 **Step 4: Build an image.**
 ```
