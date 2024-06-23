@@ -3,14 +3,14 @@
 **Step 2: Edit pom.xml file and add finalname of the artifact.** 
 ```
 <build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-		<finalName>spring-boot-docker</finalName>
-	</build>
+    <plugins>
+        <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+     </plugins>
+        <finalName>spring-boot-docker</finalName>
+</build>
 ```
 **Step 3: Create a Dockerfile.**
 ```
