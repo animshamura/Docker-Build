@@ -1,6 +1,17 @@
 # Dockerized Spring Boot App
 **Step 1: Create a spring boot app.** <br/><br/>
-**Step 2: Edit pom.xml file and add finalname of the artifact.** <br/><br/>
+**Step 2: Edit pom.xml file and add finalname of the artifact.** 
+```
+<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+		<finalName>spring-boot-docker</finalName>
+	</build>
+```
 **Step 3: Create a Dockerfile.**
 ```
 FROM maven:3.8.3-openjdk-17 AS build
