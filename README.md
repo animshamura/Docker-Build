@@ -64,7 +64,7 @@ docker run -d -p 5000:5000 flask-app
 <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-greeting.png?raw=true">
 
-# Dockerizing a Angular App
+# Dockerizing an Angular App
 **Step 1: Create an angular app.** <br/><br/>
 **Step 2: Create a Dockerfile.**
 ```
