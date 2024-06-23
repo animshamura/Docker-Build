@@ -135,7 +135,7 @@ docker-compose up
 **Step 3: Hit http://localhost:8080/ for accesing PHPMyAdmin dashboard.** <br/> <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/mysql-pma.png?raw=true">
 
-# Dockering PG4Admin and PostgreSQL
+# Dockering PGAdmin and PostgreSQL
 **Step 1: Create a docker-compose.yaml file.**
 ```
 version: "3.8"
