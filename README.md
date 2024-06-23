@@ -25,7 +25,10 @@ ENTRYPOINT ["java","-jar","/home/app/target/spring-boot-docker.jar"]
 ```
 docker build -t spring-app .
 ```
-**Step 5: Run the imaage in the container.** <br/><br/>
+**Step 5: Run the imaage in the container.** 
+```
+docker run -d -p 9090:8080 spring-app
+```
 **Step 6: Hit http://localhost:9090/ and http://localhost:9090/greet for the following views in the browser.** <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-running.png?raw=true">
 <br/><br/>
