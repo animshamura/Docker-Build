@@ -106,7 +106,7 @@ volumes:
 ```
 docker-compose up
 ```
-
+**Step 3: Hit http://localhost:8080/ for accesing PHPMyAdmin dashboard.** <br/> <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/mysql-pma.png?raw=true">
 
 # Dockering PG4Admin and PostgreSQL
