@@ -102,7 +102,7 @@ services:
 volumes:
   mysql-data:
 ```
-**Step 2: Turn the docker-compose file up .**
+**Step 2: Turn up the docker-compose file .**
 ```
 docker-compose up
 ```
@@ -110,6 +110,35 @@ docker-compose up
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/mysql-pma.png?raw=true">
 
 # Dockering PG4Admin and PostgreSQL
+**Step 1: Create a docker-compose.yaml file.**
+```
+version: "3.8"
+services:
+  db:
+    container_name: postgres_container
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: test_db
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: shamura@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+```
+**Step 2: Turn up the docker-compose file .**
+```
+docker-compose up
+```
+**Step 3: Hit http://localhost:5050/ for accesing PG4Admin dashboard.** <br/> <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/postgresql-pg4.png?raw=true">
 
 # Dockerizing Mongo Express and MongoDB
