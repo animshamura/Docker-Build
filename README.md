@@ -65,6 +65,32 @@ docker run -d -p 5000:5000 flask-app
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-greeting.png?raw=true">
 
 # Dockerizing a Angular App
+**Step 1: Create an angular app.** <br/><br/>
+**Step 2: Create a Dockerfile.**
+```
+FROM node:alpine
+
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app
+
+RUN npm install -g @angular/cli
+
+RUN npm install
+
+EXPOSE 4200
+
+CMD ["ng", "serve"]
+```
+**Step 4: Build an image.**
+```
+docker build -t angular-app .
+```
+**Step 5: Run the imaage in the container.** 
+```
+docker run -d -p 4200:4200 angular-app
+```
+**Step 6: Hit http://localhost:4200/ for the following view in the browser.** <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/angular.png?raw=true">
 
 # Dockerizing  PHPMyAdmin and MySQL
