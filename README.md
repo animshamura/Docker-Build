@@ -1,4 +1,4 @@
-# Dockerized Spring Boot App
+# Dockerizing a Spring Boot App
 **Step 1: Create a spring boot app.** <br/><br/>
 **Step 2: Edit pom.xml file and add finalname of the artifact.** 
 ```
@@ -34,7 +34,7 @@ docker run -d -p 9090:8080 spring-app
 <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring--greeting.png?raw=true">
 
-# Dockerized Flask App
+# Dockerizing a Flask App
 
 **Step 1: Create a flask app.** <br/><br/>
 **Step 2: Create a file naming requirements.txt for installing all dependencies.** <br/><br/>
@@ -70,14 +70,14 @@ docker run -d -p 5000:5000 flask-app
 <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-greeting.png?raw=true">
 
-# Dockerized Angular App
+# Dockerizing a Angular App
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/angular.png?raw=true">
 
-# Dockerized PHPMyAdmin for MySQL Database
+# Dockerizing  PHPMyAdmin and MySQL
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/mysql-pma.png?raw=true">
 
-# Dockerized PG4Admin for PostgreSQL Database
+# Dockering PG4Admin and PostgreSQL
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/postgresql-pg4.png?raw=true">
 
-# Dockerized Mongo Express for MongoDB
+# Dockerizing Mongo Express and MongoDB
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/mongo-express.png?raw=true">
