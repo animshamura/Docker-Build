@@ -34,7 +34,7 @@ docker run -d -p 9090:8080 spring-app
 <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring--greeting.png?raw=true">
 
-# Dockerizing a Flask App
+# Dockerizing Flask App
 
 **Step 1: Create a flask app.** <br/><br/>
 **Step 2: Create a file naming requirements.txt for installing all dependencies.** <br/><br/>
