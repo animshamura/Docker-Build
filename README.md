@@ -35,7 +35,8 @@ Open a terminal in the directory where the Dockerfile is located and run the com
 ```
 docker build -t spring-app .
 ```
-**Step 5: Run the image in the container.** 
+**Step 5: Run the image in the container.** <br/> <br/>
+Run an instance of the image on port 8080 from the container to port 9090 on the host or external network.
 ```
 docker run -d -p 9090:8080 spring-app
 ```
