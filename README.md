@@ -19,7 +19,7 @@ git remote add origin https://github.com/animshamura/spring-boot-app.git
 git branch -M main
 git push -u origin main
 ```
-**Step 3: Create a Dockerfile.** <br/><br/>
+**Step 4: Create a Dockerfile.** <br/><br/>
 As from the initialization, 'maven:3.8.3-openjdk-17' has been selected as the base image having all the requirements matched up. All files in the 'src' folder will be copied to the image's '/home/app/src' directory and so the pom.xml to the 
 '/home/app' directory. The 'mvn clean package' command clears the target directory. It builds the project and packages in the resulting JAR file into the target directory without running unit tests during the build.
 ```
@@ -30,17 +30,17 @@ RUN mvn -f /home/app/pom.xml clean package
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/home/app/target/spring-boot-docker.jar"]
 ```
-**Step 4: Build an image.** <br/><br/>
+**Step 5: Build an image.** <br/><br/>
 Open a terminal in the directory where the Dockerfile is located and run the command below to build an image. 
 ```
 docker build -t spring-app .
 ```
-**Step 5: Run the image in the container.** <br/> <br/>
+**Step 6: Run the image in the container.** <br/> <br/>
 Run an instance of the image on port 8080 from the container to port 9090 on the host or external network.
 ```
 docker run -d -p 9090:8080 spring-app
 ```
-**Step 6: Hit http://localhost:9090/ and http://localhost:9090/greet for the following views in the browser.** <br/><br/>
+**Step 7: Hit http://localhost:9090/ and http://localhost:9090/greet for the following views in the browser.** <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-running.png?raw=true">
 <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring--greeting.png?raw=true">
@@ -60,10 +60,10 @@ pip install flask
 Create a app.py file and write below code to get view upon hit requests.<br/> <br/> 
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-index.png?raw=true"> 
 
-**Step 2: Create a file naming 'requirements.txt' for installing all dependencies.** <br/>
+**Step 2: Create a file naming 'requirements.txt' for installing all dependencies.** <br/> <br/> 
 A project must have a lot of dependencies to run in an instance. For an easier dockerizing process, a text file naming requirement.txt has to be created including all the dependencies for the project.  
-<br/>
-**Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/>
+
+**Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/> 
 Initialize the project as a local git repository.
 ```
 git init
@@ -74,8 +74,8 @@ git remote add origin https://github.com/animshamura/flask-app.git
 git branch -M main
 git push -u origin main
 ```
-**Step 3: Create a Dockerfile.**
-<br/>
+**Step 4: Create a Dockerfile.**
+<br/> <br/> 
 'python:3.8' has been selected as the base image matching all compatibilities for the project. 'python/docker' directory in the image has been set as the work directory. Installed all the dependencies from the 'requirement.txt' file.
 ```
 FROM python:3.8-slim-buster
@@ -89,23 +89,24 @@ COPY . .
 
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
 ```
-**Step 4: Build an image.**  <br/>
+**Step 5: Build an image.** <br/> <br/> 
 Open a terminal in the directory where the Dockerfile is located and run the command below to build an image. 
 ```
 docker build -t flask-app .
 ```
-**Step 5: Run the image in the container.**  <br/>
+**Step 6: Run the image in the container.**  <br/> <br/> 
 Run an instance of the image on port 5000 from the container to port 5000 on the host or external network.
 ```
 docker run -d -p 5000:5000 flask-app
 ```
-**Step 6: Hit http://localhost:5000/ and http://localhost:5000/greet for the following views in the browser.** <br/><br/>
+**Step 7: Hit http://localhost:5000/ and http://localhost:5000/greet for the following views in the browser.** <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-running.png?raw=true">
 <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-greeting.png?raw=true">
 # Dockerizing Node App
 
-**Step 1: Create a node app.** <br/>
+**Step 1: Create a node app.** <br/> <br/> 
+Initialize npm and install express. 
 ```
 npm init -y
 npm install express
@@ -114,7 +115,7 @@ Create a index.js file and write code to view it upon hit requests.  <br/> <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/node-index.png?raw=true">
  <br/>
 
-**Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
+**Step 2: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
 Initialize the project as a local git repository.
 ```
 git init
@@ -125,7 +126,7 @@ git remote add origin https://github.com/animshamura/spring-boot-app.git
 git branch -M main
 git push -u origin main
 ```
-**Step 2: Create a Dockerfile.**
+**Step 3: Create a Dockerfile.** <br/> <br/> 
 ```
 FROM node:14
 
@@ -142,33 +143,33 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-**Step 3: Build an image.**  <br/> <br/>
+**Step 4: Build an image.**  <br/> <br/>
 Open a terminal in the directory where the Dockerfile is located and run the command below to build an image. 
 ```
 docker build -t node-app .
 ```
-**Step 4: Run the image in the container.**  <br/> <br/>
+**Step 5: Run the image in the container.**  <br/> <br/>
 Run an instance of the image on port 3000 from the container to port 3000 on the host or external network.
 ```
 docker run -d -p 3000:3000 node-app
 ```
-**Step 5: Hit http://localhost:3000/ for the following view in the browser.** <br/><br/>
+**Step 6: Hit http://localhost:3000/ for the following view in the browser.** <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/node-app.png?raw=true">
 
 # Dockerizing Angular App
 **Step 1: Create an angular app.** <br/><br/>
-**Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
+**Step 2: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
 Initialize the project as a local git repository.
 ```
 git init
 ```
 Login to https://github.com and create a repository. Then, add remote repository and push files in the local repository to the remote repository. <br/>
 ```
-git remote add origin https://github.com/animshamura/spring-boot-app.git
+git remote add origin https://github.com/animshamura/angular-app.git
 git branch -M main
 git push -u origin main
 ```
-**Step 2: Create a Dockerfile.**
+**Step 3: Create a Dockerfile.** <br/> <br/> 
 ```
 FROM node:alpine
 
@@ -184,11 +185,13 @@ EXPOSE 4200
 
 CMD ["ng", "serve"]
 ```
-**Step 4: Build an image.**
+**Step 4: Build an image.** <br/> <br/> 
+Open a terminal in the directory where the Dockerfile is located and run the command below to build an image. 
 ```
 docker build -t angular-app .
 ```
-**Step 5: Run the image in the container.** 
+**Step 5: Run the image in the container.** <br/> <br/> 
+Run an instance of the image on port 4200 from the container to port 4200 on the host or external network.
 ```
 docker run -d -p 4200:4200 angular-app
 ```
