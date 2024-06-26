@@ -2,7 +2,7 @@
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/docker.png?raw=true"> <br/>
   
 # Dockerizing Spring Boot App
-***Step 1: Create a spring boot app from https://start.spring.io .**
+**Step 1: Create a spring boot app from https://start.spring.io .**
 <br/> <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-initialize.png?raw=true">
 <br/><br/>
