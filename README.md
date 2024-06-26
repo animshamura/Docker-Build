@@ -57,6 +57,9 @@ py -3 -m venv venv
 venv\Scripts\activate
 pip install flask
 ```
+Create a app.py file and write below code to get view upon hit requests.<br/> <br/> 
+<img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-index.png?raw=true"> 
+
 **Step 2: Create a file naming 'requirements.txt' for installing all dependencies.** <br/>
 A project must have a lot of dependencies to run in an instance. For an easier dockerizing process, a text file naming requirement.txt has to be created including all the dependencies for the project.  
 <br/>
