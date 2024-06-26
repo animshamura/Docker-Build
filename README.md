@@ -1,3 +1,4 @@
+<div align="justified">
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/docker.png?raw=true"> <br/>
 # Dockerizing Spring Boot App
 **Step 1: Create a spring boot app from https://start.spring.io .** <br/> <br/>
@@ -254,3 +255,4 @@ docker-compose up
 ```
 **Step 3: Hit http://localhost:8081/ for accesing Mongo Express dashboard.** <br/> <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/mongo-express.png?raw=true">
+<div/> 
