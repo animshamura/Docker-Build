@@ -57,9 +57,20 @@ py -3 -m venv venv
 venv\Scripts\activate
 pip install flask
 ```
-**Step 2: Create a file naming requirements.txt for installing all dependencies.** <br/>
+**Step 2: Create a file naming 'requirements.txt' for installing all dependencies.** <br/>
 A project must have a lot of dependencies to run in an instance. For an easier dockerizing process, a text file naming requirement.txt has to be created including all the dependencies for the project.  
 <br/>
+**Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
+Initialize the project as a local git repository.
+```
+git init
+```
+Login to https://github.com and create a repository. Then, add remote repository and push files in the local repository to the remote repository. <br/>
+```
+git remote add origin https://github.com/animshamura/flask-app.git
+git branch -M main
+git push -u origin main
+```
 **Step 3: Create a Dockerfile.**
 <br/><br/>
 'python:3.8' has been selected as the base image matching all compatibilities for the project. 'python/docker' directory in the image has been set as the work directory. Installed all the dependencies from the 'requirement.txt' file.
@@ -92,6 +103,17 @@ docker run -d -p 5000:5000 flask-app
 # Dockerizing Node App
 
 **Step 1: Create a node app.** <br/><br/>
+**Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
+Initialize the project as a local git repository.
+```
+git init
+```
+Login to https://github.com and create a repository. Then, add remote repository and push files in the local repository to the remote repository. <br/>
+```
+git remote add origin https://github.com/animshamura/spring-boot-app.git
+git branch -M main
+git push -u origin main
+```
 **Step 2: Create a Dockerfile.**
 ```
 FROM node:14
@@ -108,6 +130,7 @@ EXPOSE 3000
 
 CMD ["npm", "start"]
 ```
+
 **Step 3: Build an image.**
 Open a terminal in the directory where the Dockerfile is located and run the command below to build an image. 
 ```
@@ -123,6 +146,17 @@ docker run -d -p 3000:3000 node-app
 
 # Dockerizing Angular App
 **Step 1: Create an angular app.** <br/><br/>
+**Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
+Initialize the project as a local git repository.
+```
+git init
+```
+Login to https://github.com and create a repository. Then, add remote repository and push files in the local repository to the remote repository. <br/>
+```
+git remote add origin https://github.com/animshamura/spring-boot-app.git
+git branch -M main
+git push -u origin main
+```
 **Step 2: Create a Dockerfile.**
 ```
 FROM node:alpine
