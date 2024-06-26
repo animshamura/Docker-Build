@@ -11,7 +11,7 @@ Initialize the project as a local git repository.
 ```
 git init
 ```
-Login to https://github.com and create a repository. Then, add remote repository and push files in the local repository to the remote repository. <br/><br/>
+Login to https://github.com and create a repository. Then, add remote repository and push files in the local repository to the remote repository. <br/>
 ```
 git remote add origin https://github.com/animshamura/spring-boot-app.git
 git branch -M main
