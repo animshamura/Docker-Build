@@ -139,12 +139,12 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-**Step 3: Build an image.**
+**Step 3: Build an image.**  <br/> <br/>
 Open a terminal in the directory where the Dockerfile is located and run the command below to build an image. 
 ```
 docker build -t node-app .
 ```
-**Step 4: Run the image in the container.** 
+**Step 4: Run the image in the container.**  <br/> <br/>
 Run an instance of the image on port 3000 from the container to port 3000 on the host or external network.
 ```
 docker run -d -p 3000:3000 node-app
