@@ -20,7 +20,7 @@ git branch -M main
 git push -u origin main
 ```
 **Step 3: Create a Dockerfile.** <br/><br/>
-As from the initialization, 'maven:3.8.3-openjdk-17' has been selected as the base image having requirements matched up. All files in the 'src' folder will be copied to the image's '/home/app/src' directory and so the pom.xml to the 
+As from the initialization, 'maven:3.8.3-openjdk-17' has been selected as the base image having all the requirements matched up. All files in the 'src' folder will be copied to the image's '/home/app/src' directory and so the pom.xml to the 
 '/home/app' directory. The 'mvn clean package' command clears the target directory. It builds the project and packages in the resulting JAR file into the target directory without running unit tests during the build.
 ```
 FROM maven:3.8.3-openjdk-17 AS build
@@ -30,7 +30,8 @@ RUN mvn -f /home/app/pom.xml clean package
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/home/app/target/spring-boot-docker.jar"]
 ```
-**Step 4: Build an image.**
+**Step 4: Build an image.** <br/><br/>
+Open a terminal in the directory where the Dockerfile is located and run the command below to build an image. 
 ```
 docker build -t spring-app .
 ```
