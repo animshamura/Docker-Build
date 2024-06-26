@@ -60,7 +60,7 @@ pip install flask
 **Step 2: Create a file naming 'requirements.txt' for installing all dependencies.** <br/>
 A project must have a lot of dependencies to run in an instance. For an easier dockerizing process, a text file naming requirement.txt has to be created including all the dependencies for the project.  
 <br/>
-**Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
+**Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/>
 Initialize the project as a local git repository.
 ```
 git init
@@ -72,7 +72,7 @@ git branch -M main
 git push -u origin main
 ```
 **Step 3: Create a Dockerfile.**
-<br/><br/>
+<br/>
 'python:3.8' has been selected as the base image matching all compatibilities for the project. 'python/docker' directory in the image has been set as the work directory. Installed all the dependencies from the 'requirement.txt' file.
 ```
 FROM python:3.8-slim-buster
@@ -86,12 +86,12 @@ COPY . .
 
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
 ```
-**Step 4: Build an image.**
+**Step 4: Build an image.**  <br/>
 Open a terminal in the directory where the Dockerfile is located and run the command below to build an image. 
 ```
 docker build -t flask-app .
 ```
-**Step 5: Run the image in the container.** 
+**Step 5: Run the image in the container.**  <br/>
 Run an instance of the image on port 5000 from the container to port 5000 on the host or external network.
 ```
 docker run -d -p 5000:5000 flask-app
@@ -102,13 +102,14 @@ docker run -d -p 5000:5000 flask-app
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/flask-greeting.png?raw=true">
 # Dockerizing Node App
 
-**Step 1: Create a node app.** <br/><br/>
+**Step 1: Create a node app.** <br/>
 ```
 npm init -y
 npm install express
 ```
-Create a index.js file and write code to view it upon hit requests. 
+Create a index.js file and write code to view it upon hit requests.  <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/node-index.png?raw=true">
+ <br/>
 
 **Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
 Initialize the project as a local git repository.
