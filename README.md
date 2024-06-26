@@ -106,7 +106,7 @@ docker run -d -p 5000:5000 flask-app
 # Dockerizing Node App
 
 **Step 1: Create a node app.** <br/> <br/> 
-Initialize npm and install express. 
+Initialize a project and install express. 
 ```
 npm init -y
 npm install express
@@ -122,11 +122,12 @@ git init
 ```
 Login to https://github.com and create a repository. Then, add remote repository and push files in the local repository to the remote repository. <br/>
 ```
-git remote add origin https://github.com/animshamura/spring-boot-app.git
+git remote add origin https://github.com/animshamura/node-app.git
 git branch -M main
 git push -u origin main
 ```
 **Step 3: Create a Dockerfile.** <br/> <br/> 
+'node:14' has been selected as base image, '/usr/src/app' has been set as the work directory and all the files have been copied to the '/usr/src/app' directory of the image.'npm install express' command has been run to install all the dependencies. 
 ```
 FROM node:14
 
@@ -158,6 +159,11 @@ docker run -d -p 3000:3000 node-app
 
 # Dockerizing Angular App
 **Step 1: Create an angular app.** <br/><br/>
+First install Angular CLI and then create a new angular application.
+```
+npm install - g @angular/cli
+ng new angular-app
+```
 **Step 2: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
 Initialize the project as a local git repository.
 ```
@@ -170,6 +176,7 @@ git branch -M main
 git push -u origin main
 ```
 **Step 3: Create a Dockerfile.** <br/> <br/> 
+'node:alpine' has been selected as base image, '/usr/src/app' has been set as the work directory and all the files have been copied to the '/usr/src/app' directory of the image. Angular CLI has been installed and 'npm install' command has been run to install all the dependencies.  
 ```
 FROM node:alpine
 
