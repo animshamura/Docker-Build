@@ -19,7 +19,7 @@ git remote add origin https://github.com/animshamura/spring-boot-app.git
 git branch -M main
 git push -u origin main
 ```
-**Step 3: Create a Dockerfile.** <br/><br/>
+**Step 3: Create a Dockerfile.** <br/>
 As from the initialization, 'maven:3.8.3-openjdk-17' has been selected as the base image having requirements matched up. All files in the 'src' folder will be copied to the image's '/home/app/src' directory and so the pom.xml to the 
 '/home/app' directory. The 'mvn clean package' command clears the target directory. It builds the project and packages in the resulting JAR file into the target directory without running unit tests during the build.
 ```
