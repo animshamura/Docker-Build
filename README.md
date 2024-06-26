@@ -6,17 +6,16 @@
 **Step 2: Edit the main application file, include restcontoller and map some views.** <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-controller.png?raw=true">
 <br/> <br/>
-**Step 2: Edit pom.xml file and add finalname of the artifact.** 
+**Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
+Initialize the project as a local git repository.
 ```
-<build>
-    <plugins>
-        <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        </plugin>
-     </plugins>
-        <finalName>spring-boot-docker</finalName>
-</build>
+git init
+```
+Login to https://github.com and create a repository. <br/>
+```
+git remote add origin https://github.com/animshamura/spring-boot-app.git
+git branch -M main
+git push -u origin main
 ```
 **Step 3: Create a Dockerfile.**
 ```
