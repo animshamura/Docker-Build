@@ -2,15 +2,15 @@
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/docker.png?raw=true"> <br/>
   
 # Dockerizing Spring Boot App
-### Step 1: Create a spring boot app from https://start.spring.io . ###
+***Step 1: Create a spring boot app from https://start.spring.io .**
 <br/> <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-initialize.png?raw=true">
 <br/><br/>
-### Step 2: Edit the main application file, include restcontoller and map some views. ###
+***Step 2: Edit the main application file, include restcontoller and map some views.**
 <br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-controller.png?raw=true">
 <br/> <br/>
-### Step 3: Transform the project directory into a local git repository and add it to the remote repository. 
+**Step 3: Transform the project directory into a local git repository and add it to the remote repository.**
 <br/> <br/>
 Initialize the project as a local git repository.
 ```
