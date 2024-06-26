@@ -108,7 +108,7 @@ npm init -y
 npm install express
 ```
 Create a index.js file and write code to view it upon hit requests. 
-<img src="![image](https://github.com/animshamura/Dockerization/assets/47661479/21951795-85b6-4af2-a5e6-cc4cf9efd1f6)">
+<img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/node-index.png?raw=true">
 
 **Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
 Initialize the project as a local git repository.
