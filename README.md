@@ -58,6 +58,7 @@ venv\Scripts\activate
 pip install flask
 ```
 **Step 2: Create a file naming requirements.txt for installing all dependencies.** <br/><br/>
+A project must have a lot of dependencies to run in an instance. For an easier dockerizing process, a text file naming requirement.txt has to be created including all the dependencies for the project.  
 **Step 3: Create a Dockerfile.**
 ```
 FROM python:3.8-slim-buster
