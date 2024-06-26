@@ -48,16 +48,13 @@ docker run -d -p 9090:8080 spring-app
 # Dockerizing Flask App
 
 **Step 1: Create a flask app.** <br/><br/>
+Python3 must have to installed in the machine. After that, 'pip' has to be installed. A virtual environment has to be created and further creating a virtual environment for windows. The virtual environment has to be activated with flask being installed.  
 ```
-pip install virtualenv #Create virtualenv
+pip install virtualenv, 
 python3 -m venv venv
-#Create virtualenv for windows
 py -3 -m venv venv
-#Activate virualenv:
 . venv/bin/activate
-#Activate virualenv for windows
 venv\Scripts\activate
-#Install Flask on the enviroment
 pip install flask
 ```
 **Step 2: Create a file naming requirements.txt for installing all dependencies.** <br/><br/>
