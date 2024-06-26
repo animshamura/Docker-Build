@@ -107,7 +107,7 @@ docker run -d -p 5000:5000 flask-app
 npm init -y
 npm install express
 ```
-Create a index.js file and write code to view it upon hit requests.  <br/>
+Create a index.js file and write code to view it upon hit requests.  <br/> <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/node-index.png?raw=true">
  <br/>
 
