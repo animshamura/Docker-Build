@@ -1,4 +1,4 @@
-<div align="justified">
+<div align="justify">
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/docker.png?raw=true"> <br/>
   
 # Dockerizing Spring Boot App
