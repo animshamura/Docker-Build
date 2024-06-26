@@ -6,10 +6,12 @@
 <br/> <br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-initialize.png?raw=true">
 <br/><br/>
-**Step 2: Edit the main application file, include restcontoller and map some views.** <br/><br/>
+### Step 2: Edit the main application file, include restcontoller and map some views. ###
+<br/><br/>
 <img src="https://github.com/animshamura/Dockerization/blob/main/app-screenshot/spring-controller.png?raw=true">
 <br/> <br/>
-**Step 3: Transform the project directory into a local git repository and add it to the remote repository.** <br/> <br/>
+### Step 3: Transform the project directory into a local git repository and add it to the remote repository. 
+<br/> <br/>
 Initialize the project as a local git repository.
 ```
 git init
