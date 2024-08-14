@@ -23,8 +23,7 @@ git branch -M main
 git push -u origin main
 ```
 **Step 4: Create a Dockerfile.** <br/><br/>
-As from the initialization, 'maven:3.8.3-openjdk-17' has been selected as the base image having all the requirements matched up. All files in the 'src' folder will be copied to the image's '/home/app/src' directory and so the pom.xml to the 
-'/home/app' directory. The 'mvn clean package' command clears the target directory. It builds the project and packages in the resulting JAR file into the target directory without running unit tests during the build.
+
 ```
 # Use OpenJDK as the base image for building
 FROM openjdk:17 AS builder
@@ -108,7 +107,7 @@ git push -u origin main
 ```
 **Step 4: Create a Dockerfile.**
 <br/> <br/> 
-'python:3.8' has been selected as the base image matching all compatibilities for the project. 'python/docker' directory in the image has been set as the work directory. Installed all the dependencies from the 'requirement.txt' file.
+
 ```
 FROM python:3.8-slim-buster
 
@@ -159,7 +158,7 @@ git branch -M main
 git push -u origin main
 ```
 **Step 3: Create a Dockerfile.** <br/> <br/> 
-'node:14' has been selected as base image, '/usr/src/app' has been set as the work directory and all the files have been copied to the '/usr/src/app' directory of the image. 'npm install express' command has been run to install all the dependencies. 
+
 ```
 FROM node:14
 
@@ -207,8 +206,7 @@ git remote add origin https://github.com/animshamura/angular-app.git
 git branch -M main
 git push -u origin main
 ```
-**Step 3: Create a Dockerfile.** <br/> <br/> 
-'node:alpine' has been selected as base image, '/usr/src/app' has been set as the work directory and all the files have been copied to the '/usr/src/app' directory of the image. Angular CLI has been installed and 'npm install' command has been run to install all the dependencies.  
+**Step 3: Create a Dockerfile.** <br/> <br/>  
 ```
 # Stage 1: Build the application
 FROM node:alpine as build
