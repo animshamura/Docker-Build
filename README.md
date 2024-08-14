@@ -23,7 +23,6 @@ git branch -M main
 git push -u origin main
 ```
 **Step 4: Create a Dockerfile.** <br/><br/>
-
 ```
 # Use OpenJDK as the base image for building
 FROM openjdk:17 AS builder
@@ -109,16 +108,40 @@ git push -u origin main
 <br/> <br/> 
 
 ```
-FROM python:3.8-slim-buster
+# Stage 1: Build
+FROM python:3.8-slim-buster AS build
 
+# Set the working directory
 WORKDIR /python-docker
 
+# Copy only the requirements file to leverage Docker cache
 COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
 
-COPY . .
+# Install the dependencies in a virtual environment
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt \
+    && mkdir /python-docker/app \
+    && mv /python-docker/* /python-docker/app/ \
+    && rm -rf /python-docker
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+# Stage 2: Production
+FROM python:3.8-slim-buster
+
+# Set the working directory
+WORKDIR /python-docker
+
+# Copy only the necessary files from the build stage
+COPY --from=build /python-docker/app /python-docker
+
+# Install only the necessary runtime dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose the port the app runs on
+EXPOSE 5000
+
+# Command to run the application
+CMD [ "python3", "-m", "flask", "run", "--host=0.0.0.0"]
+
 ```
 **Step 5: Build an image.** <br/> <br/> 
 Open a terminal in the directory where the Dockerfile is located and run the command below to build an image. 
@@ -160,19 +183,41 @@ git push -u origin main
 **Step 3: Create a Dockerfile.** <br/> <br/> 
 
 ```
-FROM node:14
+# Stage 1: Build
+FROM node:14 AS build
 
+# Set the working directory
 WORKDIR /usr/src/app
 
+# Copy package.json and package-lock.json (if available)
 COPY package*.json ./
 
-RUN npm install express
+# Install dependencies
+RUN npm install
 
+# Copy the rest of the application code
 COPY . .
 
+# Build the application (if needed, e.g., for TypeScript or other build steps)
+# RUN npm run build
+
+# Stage 2: Production
+FROM node:14-slim
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy only the necessary files from the build stage
+COPY --from=build /usr/src/app/node_modules /usr/src/app/node_modules
+COPY --from=build /usr/src/app/package*.json /usr/src/app/
+COPY --from=build /usr/src/app/dist /usr/src/app/ # Include this line if you have a build step
+
+# Expose the port the app runs on
 EXPOSE 3000
 
+# Command to run the application
 CMD ["npm", "start"]
+
 ```
 
 **Step 4: Build an image.**  <br/> <br/>
