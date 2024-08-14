@@ -105,7 +105,7 @@ git branch -M main
 git push -u origin main
 ```
 **Step 4: Create a Dockerfile.**
-<br/> <br/> 
+<br/>
 
 ```
 # Stage 1: Build
@@ -180,7 +180,7 @@ git remote add origin https://github.com/animshamura/node-app.git
 git branch -M main
 git push -u origin main
 ```
-**Step 3: Create a Dockerfile.** <br/> <br/> 
+**Step 3: Create a Dockerfile.** <br/>
 
 ```
 # Stage 1: Build
@@ -251,7 +251,7 @@ git remote add origin https://github.com/animshamura/angular-app.git
 git branch -M main
 git push -u origin main
 ```
-**Step 3: Create a Dockerfile.** <br/> <br/>  
+**Step 3: Create a Dockerfile.** <br/> 
 ```
 # Stage 1: Build the application
 FROM node:alpine as build
