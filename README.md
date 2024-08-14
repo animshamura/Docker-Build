@@ -347,11 +347,12 @@ docker-compose up
 # Dockering PGAdmin and PostgreSQL
 **Step 1: Create a docker-compose.yaml file.**
 ```
-version: "3.8"
+ version: "3.8"
+
 services:
   db:
     container_name: postgres_container
-    image: postgres
+    image: postgres:latest 
     restart: always
     environment:
       POSTGRES_USER: root
@@ -359,15 +360,23 @@ services:
       POSTGRES_DB: test_db
     ports:
       - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data  
+
   pgadmin:
     container_name: pgadmin4_container
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:latest  
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: shamura@gmail.com
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "5050:80"
+    depends_on:
+      - db  
+
+volumes:
+  pgdata:  
 ```
 **Step 2: Turn up the docker-compose file .**
 ```
