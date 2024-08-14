@@ -26,12 +26,41 @@ git push -u origin main
 As from the initialization, 'maven:3.8.3-openjdk-17' has been selected as the base image having all the requirements matched up. All files in the 'src' folder will be copied to the image's '/home/app/src' directory and so the pom.xml to the 
 '/home/app' directory. The 'mvn clean package' command clears the target directory. It builds the project and packages in the resulting JAR file into the target directory without running unit tests during the build.
 ```
-FROM maven:3.8.3-openjdk-17 AS build
-COPY src /home/app/src
-COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean package
+# Use OpenJDK as the base image for building
+FROM openjdk:17 AS builder
+
+# Set working directory
+WORKDIR /app
+
+# Copy Maven Wrapper
+COPY mvnw .
+COPY mvnw.cmd .
+COPY .mvn .mvn
+
+# Copy Maven project files
+COPY pom.xml .
+
+# Copy source code
+COPY src ./src
+
+# Build Spring Boot application
+RUN ./mvnw package -DskipTests
+
+# Use OpenJDK as the base image for running the application
+FROM openjdk:17
+
+# Set working directory
+WORKDIR /app
+
+# Copy the built JAR file from the previous stage
+COPY --from=builder /app/target/student-0.0.1-SNAPSHOT.jar app.jar
+
+# Expose port
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/home/app/target/spring-boot-docker.jar"]
+
+# Run the Spring Boot application
+CMD ["java", "-jar", "app.jar"]
+
 ```
 **Step 5: Build an image.** <br/><br/>
 Open a terminal in the directory where the Dockerfile is located and run the command below to build an image. 
@@ -181,19 +210,41 @@ git push -u origin main
 **Step 3: Create a Dockerfile.** <br/> <br/> 
 'node:alpine' has been selected as base image, '/usr/src/app' has been set as the work directory and all the files have been copied to the '/usr/src/app' directory of the image. Angular CLI has been installed and 'npm install' command has been run to install all the dependencies.  
 ```
-FROM node:alpine
+# Stage 1: Build the application
+FROM node:alpine as build
 
+# Set working directory for the build stage
 WORKDIR /usr/src/app
 
-COPY . /usr/src/app
-
+# Install Angular CLI globally
 RUN npm install -g @angular/cli
 
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
 RUN npm install
 
-EXPOSE 4200
+# Copy application code
+COPY . .
 
-CMD ["ng", "serve"]
+# Build the application
+RUN npm run build
+
+# Stage 2: Create the production image
+FROM nginx:alpine
+
+# Copy built files from the build stage
+COPY --from=build /usr/src/app/dist/student-fontend /usr/share/nginx/html
+
+# Copy nginx configuration file
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port
+EXPOSE 80
+
+# Command to run NGINX in the foreground
+CMD ["nginx", "-g", "daemon off;"]
 ```
 **Step 4: Build an image.** <br/> <br/> 
 Open a terminal in the directory where the Dockerfile is located and run the command below to build an image. 
