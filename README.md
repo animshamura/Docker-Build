@@ -22,7 +22,7 @@ git remote add origin https://github.com/animshamura/spring-boot-app.git
 git branch -M main
 git push -u origin main
 ```
-**Step 4: Create a Dockerfile.** <br/><br/>
+**Step 4: Create a Dockerfile.** <br/>
 ```
 # Use OpenJDK as the base image for building
 FROM openjdk:17 AS builder
